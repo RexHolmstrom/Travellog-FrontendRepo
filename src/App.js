@@ -87,7 +87,23 @@ const App = () => {
           ) : null}
         </>
       ))}
-      {addEntryLocation ? <></> : null}
+      {addEntryLocation ? (
+        <>
+          <Popup
+            latitude={addEntryLocation.latitude}
+            longitude={addEntryLocation.longitude}
+            closeButton={true}
+            closeOnClick={false}
+            dynamicPosition={true}
+            onClose={() => setAddEntryLocation(null)}
+            anchor="top"
+          >
+            <div className="popup">
+              <div>Add your new location here!</div>
+            </div>
+          </Popup>
+        </>
+      ) : null}
     </ReactMapGL>
   );
 };
