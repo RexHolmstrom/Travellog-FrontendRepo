@@ -40,7 +40,7 @@ const App = () => {
             <div
               onClick={() =>
                 setShowpopup({
-                  ...showPopup,
+                  //...showPopup,
                   [entry._id]: true,
                 })
               }
@@ -62,10 +62,10 @@ const App = () => {
               longitude={entry.longitid}
               closeButton={true}
               closeOnClick={true}
-              onClose={() => this.setState({ showPopup: false })}
+              onClose={() => setShowpopup({})}
               anchor="top"
             >
-              <div>
+              <div className="popup">
                 <h3>{entry.title}</h3>
                 <p>{entry.comments}</p>
               </div>
